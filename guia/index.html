@@ -14,26 +14,49 @@
   main { max-width: 620px; margin: 0 auto; padding: 32px 16px 56px; }
   h1 { font-size: 28px; margin: 0 0 4px; }
   h2 { font-size: 20px; margin: 36px 0 8px; }
+  h3 { font-size: 17px; margin: 24px 0 4px; }
   p, li { color: var(--texto); }
   .sub { color: var(--suave); margin-top: 0; }
   .caixa { background: var(--cartao); border-radius: 16px; padding: 4px 16px; }
   .alerta { background: var(--alerta); border-radius: 16px; padding: 4px 16px; }
   a { color: var(--destaque); }
-  nav a { margin-right: 12px; font-size: 15px; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  nav a { font-size: 15px; }
 </style>
 </head>
 <body>
 <main>
-  <nav><a href="../">← Início</a><a href="#instalar">Instalar</a><a href="#chave">Chave</a><a href="#regras">Regras</a><a href="#privacidade">Privacidade</a></nav>
+  <nav><a href="../">← Início</a><a href="#instalar">Instalar</a><a href="#chave">Chave</a><a href="#regras">Regras</a><a href="#privacidade">Privacidade</a><a href="#funcionamento">Funcionamento</a></nav>
   <h1>Guia do teste</h1>
   <p class="sub">Vitrine, versão de teste para Android.</p>
 
   <h2 id="instalar">1. Instalar o app</h2>
+  <p>Enquanto o app não está na Play Store, ele é instalado direto pelo arquivo (APK). Precisa de <strong>Android 8 ou mais recente</strong>.
+    Por enquanto não há versão para iPhone.</p>
   <ol>
-    <li>No celular Android, <a href="https://github.com/leoarteiro/vitrine-coletiva/releases/latest/download/VitrineColetiva-teste.apk">baixe o arquivo do app</a>.</li>
-    <li>Abra o arquivo baixado. O Android vai pedir para permitir a instalação de apps vindos do navegador: permita só para este caso.</li>
-    <li>O Play Protect pode avisar que o app é desconhecido (ele ainda não está na Play Store). Escolha instalar mesmo assim.</li>
+    <li>No celular Android, <a href="https://github.com/leoarteiro/vitrine-coletiva/releases/latest/download/VitrineColetiva-teste.apk">baixe o arquivo do app</a>.
+      Se o navegador avisar que o arquivo pode ser prejudicial, toque em <strong>Baixar mesmo assim</strong>.</li>
+    <li>Abra o arquivo baixado (pela notificação do download ou pelo app <em>Arquivos</em>, na pasta Downloads).</li>
+    <li>O Android vai pedir para permitir a instalação de apps vindos do navegador: toque em <strong>Configurações</strong>,
+      ative <strong>Permitir desta origem</strong> e volte. Se quiser, desative de novo depois de instalar.</li>
+    <li>O <strong>Play Protect</strong> pode avisar que o app é desconhecido (ele ainda não está na loja).
+      Toque em <strong>Mais detalhes</strong> e depois em <strong>Instalar mesmo assim</strong>.</li>
+    <li>Abra a Vitrine, crie a conta e <a href="#chave">guarde a sua chave</a>.</li>
   </ol>
+  <p class="sub">Os nomes dos botões mudam um pouco conforme a marca do celular.</p>
+
+  <h3 id="problemas">Se algo der errado</h3>
+  <ul>
+    <li><strong>"App não instalado"</strong>: se você já tinha uma versão de teste, desinstale-a e instale de novo.
+      Guarde a sua chave antes, para entrar com ela depois.</li>
+    <li><strong>O arquivo não abre</strong>: confira se o download terminou e abra pela pasta Downloads, no app <em>Arquivos</em>.</li>
+    <li><strong>Não aparece a opção de permitir</strong>: em <em>Configurações → Apps → Acesso especial →
+      Instalar apps desconhecidos</em>, escolha o navegador que você usou e ative a permissão.</li>
+    <li>Ainda com dúvida? Mande mensagem para <a href="https://instagram.com/baluartesete">@baluartesete</a>,
+      de preferência com um print da tela.</li>
+  </ul>
+  <p><strong>Atualizações:</strong> versões novas são anunciadas no <a href="https://instagram.com/baluartesete">@baluartesete</a>.
+    Basta baixar pelo mesmo link e instalar por cima; suas obras e votos continuam.</p>
   <p>Quando o app sair na Play Store, desinstale esta versão de teste e instale a da loja, entrando com a mesma chave.
     Suas obras e votos não se perdem.</p>
 
@@ -88,9 +111,14 @@
       conforme a <a href="https://policies.google.com/privacy">política de privacidade do Google</a>.</li>
   </ul>
 
-  <h2>6. Sobre a fase de teste</h2>
-  <p>O robô que abre e apura as rodadas roda num computador pessoal: se ele estiver desligado, aberturas e resultados
-    podem atrasar algumas horas, mas nada se perde. Novidades, avisos de rodada e dúvidas:
+  <h2 id="funcionamento">6. Funcionamento durante o teste</h2>
+  <div class="caixa">
+    <p><strong>O app funciona a qualquer hora:</strong> enviar obras, votar e divulgar não dependem de horário.</p>
+    <p>O robô que abre as listas, apura os votos e publica os resultados roda num computador pessoal,
+      <strong>sem horário fixo</strong>. Quando ele está desligado, aberturas de lista, resultados e avisos podem
+      atrasar algumas horas. Nada se perde: tudo é processado assim que ele volta, e os prazos de votação são respeitados.</p>
+  </div>
+  <p>Quando o app sair na Play Store, o robô passa a rodar num servidor, o tempo todo. Novidades, avisos de rodada e dúvidas:
     <a href="https://instagram.com/baluartesete">@baluartesete</a>.</p>
 </main>
 </body>

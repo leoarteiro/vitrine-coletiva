@@ -21,6 +21,7 @@
   a.secundario { background: transparent; color: var(--destaque); border: 1px solid var(--destaque); }
   ol { padding-left: 20px; } li { margin: 6px 0; }
   .nota { font-size: 14px; color: var(--suave); }
+  .caixa { background: var(--cartao); border-radius: 16px; padding: 4px 16px; }
   a { color: var(--destaque); }
 </style>
 </head>
@@ -47,11 +48,29 @@
       <a href="https://instagram.com/baluartesete">@baluartesete</a>.</li>
   </ol>
 
-  <h2>Sobre o teste</h2>
-  <p class="nota">Leia o <a href="guia/">guia completo</a> antes de começar.</p>
-  <p class="nota">O app está em teste e é instalado direto pelo arquivo acima (fora da Play Store). O Android vai
-    pedir permissão para instalar apps desta origem. Os dados das rodadas ficam no Nostr, uma rede aberta:
-    votos e resultados são públicos e podem ser conferidos por qualquer pessoa.</p>
+  <h2 id="instalar">Como instalar</h2>
+  <p class="nota">Enquanto o app não está na Play Store, ele é instalado direto pelo arquivo. Precisa de Android 8 ou mais recente.</p>
+  <ol>
+    <li>No celular, toque em <strong>Baixar o app</strong>. Se o navegador avisar que o arquivo pode ser prejudicial,
+      toque em <strong>Baixar mesmo assim</strong>.</li>
+    <li>Abra o arquivo baixado. O Android vai pedir para <strong>permitir apps desta origem</strong>: permita só para este caso.</li>
+    <li>Se o <strong>Play Protect</strong> avisar que o app é desconhecido, toque em <strong>Instalar mesmo assim</strong>
+      (o aviso aparece porque o app ainda não está na loja).</li>
+    <li>Ao criar a conta, toque em <strong>Copiar chave</strong> e guarde em lugar seguro. A chave é a sua conta.</li>
+  </ol>
+  <p class="nota">Travou em algum passo? Veja as <a href="guia/#problemas">dicas no guia</a> ou mande mensagem para
+    <a href="https://instagram.com/baluartesete">@baluartesete</a>.</p>
+
+  <h2 id="funcionamento">Funcionamento durante o teste</h2>
+  <div class="caixa">
+    <p><strong>O app funciona a qualquer hora:</strong> você pode enviar obras e votar quando quiser.</p>
+    <p>Já o robô que abre as listas, apura os votos e publica os resultados roda num computador pessoal,
+      <strong>sem horário fixo</strong>. Quando ele está desligado, aberturas, resultados e avisos podem atrasar
+      algumas horas. Nada se perde: tudo é processado assim que ele volta.</p>
+    <p class="nota">Quando o app sair na Play Store, o robô passa a rodar num servidor, o tempo todo.</p>
+  </div>
+  <p class="nota">Os dados das rodadas ficam no Nostr, uma rede aberta: votos e resultados são públicos e podem ser
+    conferidos por qualquer pessoa. Leia o <a href="guia/">guia completo</a> antes de começar.</p>
 </main>
 </body>
 </html>
