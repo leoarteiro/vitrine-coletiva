@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia do teste</title>
+<meta name="description" content="Vitrine Coletiva: como instalar, guardar sua chave, regras de conteúdo e privacidade.">
+<style>
+  :root { --fundo: #fdf7ff; --cartao: #f3edf7; --alerta: #ffdad6; --texto: #1d1b20; --suave: #49454f; --destaque: #6750a4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fundo: #141218; --cartao: #211f26; --alerta: #5c1a17; --texto: #e6e0e9; --suave: #cac4d0; --destaque: #d0bcff; }
+  }
+  body { margin: 0; background: var(--fundo); color: var(--texto); font: 17px/1.6 system-ui, sans-serif; }
+  main { max-width: 620px; margin: 0 auto; padding: 32px 16px 56px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 36px 0 8px; }
+  p, li { color: var(--texto); }
+  .sub { color: var(--suave); margin-top: 0; }
+  .caixa { background: var(--cartao); border-radius: 16px; padding: 4px 16px; }
+  .alerta { background: var(--alerta); border-radius: 16px; padding: 4px 16px; }
+  a { color: var(--destaque); }
+  nav a { margin-right: 12px; font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+  <nav><a href="../">← Início</a><a href="#instalar">Instalar</a><a href="#chave">Chave</a><a href="#regras">Regras</a><a href="#privacidade">Privacidade</a></nav>
+  <h1>Guia do teste</h1>
+  <p class="sub">Vitrine Coletiva, versão de teste para Android.</p>
+
+  <h2 id="instalar">1. Instalar o app</h2>
+  <ol>
+    <li>No celular Android, <a href="https://github.com/leoarteiro/vitrine-coletiva/releases/latest/download/VitrineColetiva-teste.apk">baixe o arquivo do app</a>.</li>
+    <li>Abra o arquivo baixado. O Android vai pedir para permitir a instalação de apps vindos do navegador: permita só para este caso.</li>
+    <li>O Play Protect pode avisar que o app é desconhecido (ele ainda não está na Play Store). Escolha instalar mesmo assim.</li>
+  </ol>
+  <p>Quando o app sair na Play Store, desinstale esta versão de teste e instale a da loja, entrando com a mesma chave.
+    Suas obras e votos não se perdem.</p>
+
+  <h2 id="chave">2. Sua chave: guarde antes de tudo</h2>
+  <div class="alerta">
+    <p><strong>A chave privada (começa com <code>nsec1</code>) é a sua conta.</strong> Não existe senha nem "esqueci a senha".</p>
+    <ul>
+      <li>Se <strong>perder</strong> a chave, perde a conta: não dá para recuperar.</li>
+      <li>Se <strong>alguém pegar</strong> a chave, pode publicar e votar em seu nome. Nunca envie a ninguém, nem para a equipe.</li>
+    </ul>
+  </div>
+  <p>Ao criar a conta, toque em "Copiar chave" e guarde num gerenciador de senhas ou anotada em papel, em lugar seguro.
+    Para usar em outro celular ou depois de reinstalar, entre com essa mesma chave. A chave pública (<code>npub1</code>)
+    pode ser mostrada à vontade: é o seu endereço.</p>
+
+  <h2 id="participar">3. Como participar</h2>
+  <div class="caixa">
+    <ol>
+      <li><strong>Envie uma obra</strong> (aba Enviar), sempre com capa e com o link de onde ela está (itch.io, YouTube,
+        Instagram, site…). Uma obra por pessoa em cada lista.</li>
+      <li><strong>Lista:</strong> de 7 a 10 obras. Quando chega a 7, há 1 dia de inscrições; se encher antes, a votação começa na hora.</li>
+      <li><strong>Votação (3 dias):</strong> escolha até 3 obras de outras pessoas e diga em uma frase por quê.
+        Toque em Divulgar para compartilhar a rodada.</li>
+      <li>Quem vota, divulga e tem obra publicada tem <strong>prioridade na próxima lista</strong>.</li>
+      <li>Sem obra na lista? Assista a um anúncio e ganhe <strong>votos do público</strong> (até 3 por rodada),
+        que formam a Escolha do Público.</li>
+      <li>Os 3 mais votados são divulgados no Instagram <a href="https://instagram.com/baluartesete">@baluartesete</a>.</li>
+    </ol>
+  </div>
+
+  <h2 id="regras">4. Regras de conteúdo</h2>
+  <p>Envie apenas obras <strong>suas</strong>, ou que você tenha o direito de divulgar. Não são aceitos:</p>
+  <ul>
+    <li>conteúdo ilegal, plágio ou uso de obra alheia sem autorização;</li>
+    <li>discurso de ódio, discriminação, assédio ou ameaças;</li>
+    <li>conteúdo sexual explícito ou violência gráfica;</li>
+    <li>golpes, spam, links enganosos ou dados pessoais de outras pessoas.</li>
+  </ul>
+  <p>Os comentários dos votos também devem ser respeitosos. Obras e contas que desrespeitem as regras são retiradas
+    da vitrine. Para denunciar algo, mande mensagem para <a href="https://instagram.com/baluartesete">@baluartesete</a>
+    com o nome da obra.</p>
+
+  <h2 id="privacidade">5. Privacidade: o que é público</h2>
+  <ul>
+    <li>A vitrine funciona sobre o <strong>Nostr</strong>, uma rede aberta. Obras, votos (com os comentários), divulgações
+      e resultados ficam <strong>públicos</strong> e ligados à sua chave pública, não ao seu nome, a menos que você o coloque.
+      Publicações no Nostr podem ficar copiadas em vários servidores e não há garantia de apagá-las.</li>
+    <li>As capas enviadas ficam em servidores públicos de arquivos (Blossom). O app regrava a imagem antes do envio,
+      o que remove dados como a localização da foto.</li>
+    <li>O app não pede nome, telefone nem e-mail. A chave fica só no seu celular.</li>
+    <li>Os anúncios (no teste, anúncios de demonstração) são do Google AdMob, que pode usar identificadores do aparelho
+      conforme a <a href="https://policies.google.com/privacy">política de privacidade do Google</a>.</li>
+  </ul>
+
+  <h2>6. Sobre a fase de teste</h2>
+  <p>O robô que abre e apura as rodadas roda num computador pessoal: se ele estiver desligado, aberturas e resultados
+    podem atrasar algumas horas, mas nada se perde. Novidades, avisos de rodada e dúvidas:
+    <a href="https://instagram.com/baluartesete">@baluartesete</a>.</p>
+</main>
+</body>
+</html>
