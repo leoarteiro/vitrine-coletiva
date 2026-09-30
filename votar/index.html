@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Votar na Vitrine Coletiva</title>
+<meta name="description" content="Abre o app Vitrine Coletiva direto na lista de votação.">
+<style>
+  :root { --fundo: #fdf7ff; --texto: #1d1b20; --suave: #49454f; --destaque: #6750a4; --sobre-destaque: #fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fundo: #141218; --texto: #e6e0e9; --suave: #cac4d0; --destaque: #d0bcff; --sobre-destaque: #381e72; }
+  }
+  body { margin: 0; background: var(--fundo); color: var(--texto); font: 17px/1.5 system-ui, sans-serif; }
+  main { max-width: 440px; margin: 0 auto; padding: 48px 16px; text-align: center; }
+  h1 { font-size: 26px; margin: 0 0 8px; }
+  p { color: var(--suave); margin: 0 0 24px; }
+  a.botao { display: block; padding: 14px; margin: 12px 0; border-radius: 28px; text-decoration: none; font-weight: 600;
+            background: var(--destaque); color: var(--sobre-destaque); }
+  a.secundario { background: transparent; color: var(--destaque); border: 1px solid var(--destaque); }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>A lista está pronta para votar</h1>
+  <p id="aviso">Abrindo o app Vitrine Coletiva…</p>
+  <a class="botao" id="abrir" href="vitrinecoletiva://rodada">Abrir o app e votar</a>
+  <a class="botao secundario" id="baixar" hidden>Ainda não tenho o app: baixar</a>
+  <p style="font-size:14px">O app funciona no Android. Depois de instalar, volte a este link.</p>
+</main>
+<script>
+  // Link usado nos e-mails do robô: .../abrir-app/?apk=<link do APK>
+  const parametros = new URLSearchParams(location.search);
+  const apk = parametros.get("apk") || "";
+  const apkSeguro = /^https:\/\//.test(apk) ? apk : "";  // só aceita https, para a página não virar redirecionador
+  const android = /android/i.test(navigator.userAgent);
+
+  // No Android, "intent://" abre o app se estiver instalado; se não estiver, o Chrome vai para o download.
+  const intent = "intent://rodada#Intent;scheme=vitrinecoletiva;package=com.leonardo.vitrine;"
+    + (apkSeguro ? "S.browser_fallback_url=" + encodeURIComponent(apkSeguro) + ";" : "") + "end";
+
+  const abrir = document.getElementById("abrir");
+  if (android) abrir.href = intent;
+  if (apkSeguro) {
+    const baixar = document.getElementById("baixar");
+    baixar.href = apkSeguro;
+    baixar.hidden = false;
+  }
+  if (android) {
+    location.href = intent;
+    setTimeout(() => {
+      document.getElementById("aviso").textContent = "Se o app não abriu, toque no botão abaixo.";
+    }, 1500);
+  } else {
+    document.getElementById("aviso").textContent = "Abra este link no celular Android onde o app está instalado.";
+  }
+</script>
+</body>
+</html>
